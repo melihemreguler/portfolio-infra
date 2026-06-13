@@ -1,0 +1,15 @@
+# Copy this file to terraform.tfvars and fill in your values.
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# terraform.tfvars is git-ignored, so your real values stay out of version control.
+
+# --- Required ---
+server_ip  = "203.0.113.10"        # public IP of your server
+acme_email = "you@example.com"     # email for Let's Encrypt registration
+
+# --- Optional overrides (defaults shown) ---
+# ssh_user             = "root"
+# ssh_key_path         = "~/.ssh/your-key"
+# k3s_version          = "v1.33.5+k3s1"   # empty string = latest stable
+# cert_manager_version = "v1.16.2"
+# kubeconfig_path      = "~/.kube/k3s-config"
