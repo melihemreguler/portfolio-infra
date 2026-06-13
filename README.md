@@ -14,6 +14,7 @@ intentionally **not** managed here.
 | Ingress / LB / DNS / Storage | Traefik, ServiceLB, CoreDNS, local-path-provisioner, metrics-server | bundled with k3s |
 | Certificates | **cert-manager** | `v1.16.2` |
 | ACME | `letsencrypt-prod` + `letsencrypt-staging` ClusterIssuers (HTTP-01 via Traefik) | — |
+| Secrets | **encryption at rest** (`--secrets-encryption`, AES-CBC) | — |
 
 Everything is **idempotent** — re-running is safe and only applies drift.
 

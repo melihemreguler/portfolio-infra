@@ -15,9 +15,11 @@ echo "==> Installing k3s (${INSTALL_K3S_VERSION:-latest stable})"
 # k3s ships Traefik (ingress), ServiceLB, local-path-provisioner, CoreDNS and
 # metrics-server by default -- exactly the platform we rely on. The official
 # installer is idempotent, so this is safe to run on an existing node.
+# --secrets-encryption: encrypt Secrets at rest in the datastore (AES-CBC),
+# so tokens/passwords aren't stored in plaintext on disk.
 curl -sfL https://get.k3s.io \
   | INSTALL_K3S_VERSION="${INSTALL_K3S_VERSION:-}" \
-    INSTALL_K3S_EXEC="server --write-kubeconfig-mode=644" \
+    INSTALL_K3S_EXEC="server --write-kubeconfig-mode=644 --secrets-encryption" \
     sh -
 
 echo "==> Ensuring k3s service is enabled and running"
